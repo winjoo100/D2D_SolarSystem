@@ -12,6 +12,8 @@ struct MouseState
 
     bool   leftPressed{ false };
     bool   rightPressed{ false };
+
+    int    wheelDelta{ 0 };
 };
 
 static bool IsMouseMove(const MouseState& prev, const MouseState& cur)
@@ -45,6 +47,9 @@ public:
     bool GetKeyDown(UINT vk) const;
     
     MouseState GetMouseState() const { return m_CurMouse; }
+    void SetMouseWheelDelta(int value) {
+        m_CurMouse.wheelDelta = value;
+    }
 
 protected:
 

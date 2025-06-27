@@ -26,6 +26,7 @@ protected:
     virtual void OnMouseRButtonDown(D2D1_POINT_2F pos);
     virtual void OnMouseRButtonUp(D2D1_POINT_2F pos);
     virtual void OnMouseMove(D2D1_POINT_2F prev, D2D1_POINT_2F cur);
+    virtual void OnMouseWheel(int delta, D2D1_POINT_2F pos);
 
     virtual void ProcessKeyboardEvents() abstract;
 

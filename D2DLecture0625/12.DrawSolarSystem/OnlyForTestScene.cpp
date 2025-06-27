@@ -46,6 +46,11 @@ void OnlyForTestScene::ProcessMouseEvents()
         OnMouseMove(ToFloatPoint(prevMouseStatus), ToFloatPoint(curMouseStatus));
     }
 
+    if (curMouseStatus.wheelDelta != 0)
+    {
+        OnMouseWheel(curMouseStatus.wheelDelta, ToFloatPoint(curMouseStatus));
+    }
+
     prevMouseStatus = curMouseStatus;
 }
 
@@ -73,6 +78,12 @@ void OnlyForTestScene::OnMouseMove(D2D1_POINT_2F prev, D2D1_POINT_2F cur)
 {
    /* std::cout << "Mouse moved from (" << prev.x << ", " << prev.y << ") to ("
         << cur.x << ", " << cur.y << ")" << std::endl;*/
+}
+
+void OnlyForTestScene::OnMouseWheel(int delta, D2D1_POINT_2F pos)
+{
+    std::cout << "mouse wheel (" << pos.x << ", " << pos.y << ") to ("
+        << delta << ")" << std::endl;
 }
 
 

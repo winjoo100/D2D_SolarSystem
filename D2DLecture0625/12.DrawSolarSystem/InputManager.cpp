@@ -78,6 +78,13 @@ bool InputManager::OnHandleMessage(const MSG& msg)
     }
     break;
 
+    case WM_MOUSEWHEEL:
+    {
+        int delta = GET_WHEEL_DELTA_WPARAM(msg.wParam);
+        m_CurMouse.wheelDelta += delta;
+    }
+    break;
+
     case WM_MOUSEMOVE:
     case WM_LBUTTONDOWN:
     case WM_LBUTTONUP:  
@@ -240,5 +247,9 @@ void InputManager::HandleKeyboardInput(RAWINPUT& raw)
 
 void InputManager::HandleMouseInput(RAWINPUT& raw)
 {
-    // 자율 과제!
+    if (raw.data.mouse.usButtonFlags & RI_MOUSE_WHEEL)
+    {
+        SHORT delta = (SHORT)raw.data.mouse.usButtonData;
+        m_CurMouse.wheelDelta += delta;
+    }
 }

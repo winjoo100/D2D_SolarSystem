@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include "TMHelper.h"
 
 using Vec2F = MYHelper::Vector2F;
@@ -24,7 +25,11 @@ public:
 
     void SetZoom(float zoom) noexcept
     {
-        m_zoom = zoom;
+        constexpr float minZoom = 0.3f;
+        constexpr float maxZoom = 3.0f;
+
+        m_zoom = std::clamp(zoom, minZoom, maxZoom);
+
     }
 
     Vec2F GetPosition() const noexcept
