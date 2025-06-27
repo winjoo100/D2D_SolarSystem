@@ -34,11 +34,11 @@ bool MainApp::Initialize()
     // [테스트 셋업]은 여기에서 해요.
     // 테스트할 씬을 하나만 만들어 둡니다.
 
-    m_TestScenePtr = std::make_shared<DefaultTestScene>();
+    //m_TestScenePtr = std::make_shared<DefaultTestScene>();
 
-    //m_TestScenePtr = std::make_shared<TransformPracticeScene>();
+    m_TestScenePtr = std::make_shared<TransformPracticeScene>();
 
-   // m_TestScenePtr = std::make_shared<HierarchicalTransformTestScene>();
+    //m_TestScenePtr = std::make_shared<HierarchicalTransformTestScene>();
     
     
     m_TestScenePtr->SetUp(m_hWnd);

@@ -2,6 +2,7 @@
 #include "OnlyForTestScene.h"
 #include "Camera2D.h"
 #include <list>
+#include <vector>
 #include <wrl/client.h>
 #include <d2d1_1.h>
 

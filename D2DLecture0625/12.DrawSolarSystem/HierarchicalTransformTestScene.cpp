@@ -51,10 +51,10 @@ public:
 
         D2D1::Matrix3x2F finalTM = m_renderTM * worldTM * viewTM;
 
-        D2D1::ColorF boxColor = D2D1::ColorF::LightGray;
+        D2D1::ColorF boxColor = D2D1::ColorF::LightBlue;
         
         if (m_isLeader) boxColor = D2D1::ColorF::Red;
-        else if (m_isSelected) boxColor = D2D1::ColorF::HotPink;
+        else if (m_isSelected) boxColor = D2D1::ColorF::Green;
 
         testRender.SetTransform(finalTM);
         testRender.DrawRectangle(s_rect.left, s_rect.top, s_rect.right, s_rect.bottom, boxColor);
@@ -149,7 +149,7 @@ public:
         m_isLeader = isLeader;
     }
 
-private:
+protected:
     D2DTM::Transform m_transform;
 
     MAT3X2F m_renderTM; // 렌더링 변환 행렬
