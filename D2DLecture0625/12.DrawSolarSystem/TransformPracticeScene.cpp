@@ -354,10 +354,11 @@ void TransformPracticeScene::Tick(float deltaTime)
     globalRenderer.DrawCircle(0.f, 0.f, 5.f, D2D1::ColorF::Red);
     //globalRenderer.DrawMessage(buffer, 10.f, 10.f, 100.f, 100.f, D2D1::ColorF::White);
 
-    for (auto& center : m_CenterObjects)
+    // 더미는 안그려도 됨.
+    /*for (auto& center : m_CenterObjects)
     {
         center->Draw(globalRenderer, cameraTM);
-    }
+    }*/
     for (auto& planet : m_PlanetObjects)
     {
         planet->Draw(globalRenderer, cameraTM);
